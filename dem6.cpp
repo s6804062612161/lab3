@@ -3,28 +3,29 @@
 int main(){
 	int score;
 	scanf("%d", &score);
-	if (score >= 68){
-		if (score >= 85){
-			printf("A");
+	if (score < 68){
+		if (score < 0){
+			printf("error score");
+		}
+		else if ( score < 55){
+			printf("F");
 		} else {
-			if ( score >= 75){
-				printf("B");
-			} else {
-				printf("C %d", 75-score);
-			}
+			printf("D");
 		}
 	} else {
-		if ( score >= 55){
-			printf("D");
+		if (score > 100){
+			printf("error score");
+		}
+		else if (score < 75){
+			printf("C %d", 75-score);
 		} else {
-			printf("F");
+			if ( score < 85){
+				printf("B");
+			} else {
+				printf("A");
+			}
 		}
 	}
-	if (score > 100){
-		printf("error score");
-	}
-	if (score < 0){
-		printf("error score");
-	}
+	
 	return 0;
 }
